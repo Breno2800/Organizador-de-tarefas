@@ -1,0 +1,19 @@
+<h3> listagem de tarefas </h3>
+
+{{#each categorias}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4>opção 1: {{opção1}}</h4>
+            <small>{{opção2}}</small>
+            <small>{{email}}</small>
+            <small>texto: {{texto}}</small> <br>
+            <a href="/rota1/categorias/editar/{{_id}}"><button class="btn btn-success mt-4">Editar categorias</button></a>
+        </div>
+    </div>
+{{else}}
+
+{{/each}}
+
+
+
+
