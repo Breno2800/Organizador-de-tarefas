@@ -173,16 +173,3 @@ if(!req.body.nome || req.body.nome == undefined || req.body.nome == null){
     new blogger(novoBlogger).save()
 }
 
-const express = require('express')
-const app = express()
-const handlebars = require('express-handlebars')
-const bodyParser = require('body-parser')
-const path = require('path')
-const mongoose = require('mongoose')
-const rota1 = require('./routes/rota1')
-const session = require("express-session")
-const flash = require("connect-flash")
-
-
-
-

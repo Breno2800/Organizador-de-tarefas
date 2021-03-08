@@ -96,6 +96,29 @@ router.post('/categorias/edit', (req, res) => {
     })
 })
 
+
+router.post('/categorias/deletar', (req,res) => {
+    Categoria.remove({_id: req.body.id}).then(() => {
+        req.flash('success_msg', 'deletado com sucesso!')
+        res.redirect('/rota1/listarTarefas')
+    }).catch((err) => {
+        req.flash('error_msg', 'houve um erro ao deletar')
+        res.redirect('/rota1/listarTarefas')
+    })
+})
+
+router.get('/postagens', (req, res) => {
+    res.render('task/postagens.handlebars')
+})
+
+router.get('/postagens/add', (req, res) => {
+    Categoria.find().lean().then((categorias) =>{
+        res.render('task/novaPostagem.handlebars', {categorias: categorias})
+    }).catch((err) => {
+        req.flash('error_msg', 'houve um erro')
+    })
+   
+})
 module.exports = router
 
 
